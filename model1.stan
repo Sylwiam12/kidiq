@@ -1,0 +1,27 @@
+data {
+  int<lower=0> N;               
+  array[N] real mom_iq;  
+  array[N] real kid_score;      
+}
+
+parameters {
+  real beta0;
+  real beta1;
+  real<lower=0> sigma;
+
+}
+
+model {
+  beta0 ~ normal(110, 20);   
+  beta1 ~ normal(0, 1);     
+  for (i in 1:N) {
+    kid_score[i] ~ normal(beta0 + beta1 * mom_iq[i], sigma);  
+  }
+}
+generated quantities {
+
+    array[N] real kid_score_pred;    
+    for (i in 1:N) {
+        kid_score_pred[i] = normal_rng(beta0 + beta1 * mom_iq[i], sigma);  
+    }
+}
