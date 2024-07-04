@@ -12,8 +12,9 @@ parameters {
 }
 
 model {
-  beta0 ~ normal(110, 20);   
+  beta0 ~ normal(100, 20);   
   beta1 ~ normal(0.5, 1); 
+  sigma ~ student_t(1,0,10);
   for (i in 1:N) {
     kid_score[i] ~ normal(beta0 + beta1 * mom_iq[i], sigma);  
   }

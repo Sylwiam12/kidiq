@@ -8,26 +8,27 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 19> locations_array__ = 
+static constexpr std::array<const char*, 20> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/kidiq/model1.stan', line 8, column 2 to column 13)",
- " (in '/home/kidiq/model1.stan', line 9, column 2 to column 13)",
- " (in '/home/kidiq/model1.stan', line 10, column 2 to column 22)",
- " (in '/home/kidiq/model1.stan', line 23, column 4 to column 33)",
- " (in '/home/kidiq/model1.stan', line 25, column 8 to column 73)",
- " (in '/home/kidiq/model1.stan', line 24, column 19 to line 26, column 5)",
- " (in '/home/kidiq/model1.stan', line 24, column 4 to line 26, column 5)",
- " (in '/home/kidiq/model1.stan', line 15, column 2 to column 26)",
- " (in '/home/kidiq/model1.stan', line 16, column 2 to column 25)",
- " (in '/home/kidiq/model1.stan', line 18, column 4 to column 60)",
- " (in '/home/kidiq/model1.stan', line 17, column 17 to line 19, column 3)",
- " (in '/home/kidiq/model1.stan', line 17, column 2 to line 19, column 3)",
- " (in '/home/kidiq/model1.stan', line 2, column 2 to column 17)",
- " (in '/home/kidiq/model1.stan', line 3, column 8 to column 9)",
- " (in '/home/kidiq/model1.stan', line 3, column 2 to column 23)",
- " (in '/home/kidiq/model1.stan', line 4, column 8 to column 9)",
- " (in '/home/kidiq/model1.stan', line 4, column 2 to column 26)",
- " (in '/home/kidiq/model1.stan', line 23, column 10 to column 11)"};
+ " (in '/home/DA/project/kidiq/model1.stan', line 8, column 2 to column 13)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 9, column 2 to column 13)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 10, column 2 to column 22)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 24, column 4 to column 33)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 26, column 8 to column 73)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 25, column 19 to line 27, column 5)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 25, column 4 to line 27, column 5)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 15, column 2 to column 26)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 16, column 2 to column 25)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 17, column 2 to column 28)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 19, column 4 to column 60)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 18, column 17 to line 20, column 3)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 18, column 2 to line 20, column 3)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 2, column 2 to column 17)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 3, column 8 to column 9)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 3, column 2 to column 23)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 4, column 8 to column 9)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 4, column 2 to column 26)",
+ " (in '/home/DA/project/kidiq/model1.stan', line 24, column 10 to column 11)"};
 
 
 
@@ -65,39 +66,39 @@ class model1_model final : public model_base_crtp<model1_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 13;
+      current_statement__ = 14;
       context__.validate_dims("data initialization","N","int",
            std::vector<size_t>{});
       N = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 13;
-      N = context__.vals_i("N")[(1 - 1)];
-      current_statement__ = 13;
-      stan::math::check_greater_or_equal(function__, "N", N, 0);
       current_statement__ = 14;
-      stan::math::validate_non_negative_index("mom_iq", "N", N);
+      N = context__.vals_i("N")[(1 - 1)];
+      current_statement__ = 14;
+      stan::math::check_greater_or_equal(function__, "N", N, 0);
       current_statement__ = 15;
+      stan::math::validate_non_negative_index("mom_iq", "N", N);
+      current_statement__ = 16;
       context__.validate_dims("data initialization","mom_iq","double",
            std::vector<size_t>{static_cast<size_t>(N)});
       mom_iq = 
         std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       
       
-      current_statement__ = 15;
-      mom_iq = context__.vals_r("mom_iq");
       current_statement__ = 16;
-      stan::math::validate_non_negative_index("kid_score", "N", N);
+      mom_iq = context__.vals_r("mom_iq");
       current_statement__ = 17;
+      stan::math::validate_non_negative_index("kid_score", "N", N);
+      current_statement__ = 18;
       context__.validate_dims("data initialization","kid_score","double",
            std::vector<size_t>{static_cast<size_t>(N)});
       kid_score = 
         std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       
       
-      current_statement__ = 17;
-      kid_score = context__.vals_r("kid_score");
       current_statement__ = 18;
+      kid_score = context__.vals_r("kid_score");
+      current_statement__ = 19;
       stan::math::validate_non_negative_index("kid_score_pred", "N", N);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -136,12 +137,14 @@ class model1_model final : public model_base_crtp<model1_model> {
                 0, lp__);
       {
         current_statement__ = 8;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 110, 20));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 100, 20));
         current_statement__ = 9;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0.5, 1));
-        current_statement__ = 12;
+        current_statement__ = 10;
+        lp_accum__.add(stan::math::student_t_lpdf<propto__>(sigma, 1, 0, 10));
+        current_statement__ = 13;
         for (int i = 1; i <= N; ++i) {
-          current_statement__ = 10;
+          current_statement__ = 11;
           lp_accum__.add(
             stan::math::normal_lpdf<propto__>(
               stan::model::rvalue(kid_score, "kid_score",
