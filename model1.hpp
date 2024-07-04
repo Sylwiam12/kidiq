@@ -18,7 +18,7 @@ static constexpr std::array<const char*, 19> locations_array__ =
  " (in '/home/kidiq/model1.stan', line 24, column 19 to line 26, column 5)",
  " (in '/home/kidiq/model1.stan', line 24, column 4 to line 26, column 5)",
  " (in '/home/kidiq/model1.stan', line 15, column 2 to column 26)",
- " (in '/home/kidiq/model1.stan', line 16, column 2 to column 23)",
+ " (in '/home/kidiq/model1.stan', line 16, column 2 to column 25)",
  " (in '/home/kidiq/model1.stan', line 18, column 4 to column 60)",
  " (in '/home/kidiq/model1.stan', line 17, column 17 to line 19, column 3)",
  " (in '/home/kidiq/model1.stan', line 17, column 2 to line 19, column 3)",
@@ -138,7 +138,7 @@ class model1_model final : public model_base_crtp<model1_model> {
         current_statement__ = 8;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 110, 20));
         current_statement__ = 9;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0, 1));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0.5, 1));
         current_statement__ = 12;
         for (int i = 1; i <= N; ++i) {
           current_statement__ = 10;

@@ -12,7 +12,7 @@ static constexpr std::array<const char*, 12> locations_array__ =
 {" (found before start of program)",
  " (in '/home/kidiq/prior1.stan', line 7, column 2 to column 35)",
  " (in '/home/kidiq/prior1.stan', line 8, column 2 to column 32)",
- " (in '/home/kidiq/prior1.stan', line 9, column 2 to column 17)",
+ " (in '/home/kidiq/prior1.stan', line 9, column 2 to column 36)",
  " (in '/home/kidiq/prior1.stan', line 11, column 2 to column 26)",
  " (in '/home/kidiq/prior1.stan', line 13, column 4 to column 64)",
  " (in '/home/kidiq/prior1.stan', line 12, column 17 to line 14, column 3)",
@@ -154,7 +154,7 @@ class prior1_model final : public model_base_crtp<prior1_model> {
       beta1 = stan::math::normal_rng(0, 1, base_rng__);
       double sigma = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 3;
-      sigma = 1;
+      sigma = stan::math::student_t_rng(1, 0, 5, base_rng__);
       std::vector<double> kid_score =
          std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       current_statement__ = 7;
