@@ -148,13 +148,13 @@ class prior1_model final : public model_base_crtp<prior1_model> {
       } 
       double beta0 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 1;
-      beta0 = stan::math::normal_rng(100, 20, base_rng__);
+      beta0 = stan::math::normal_rng(100, 40, base_rng__);
       double beta1 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 2;
       beta1 = stan::math::normal_rng(0.5, 1, base_rng__);
       double sigma = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 3;
-      sigma = stan::math::student_t_rng(1, 0, 10, base_rng__);
+      sigma = stan::math::student_t_rng(4, 0, 10, base_rng__);
       std::vector<double> kid_score =
          std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       current_statement__ = 7;

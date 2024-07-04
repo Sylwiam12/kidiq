@@ -7,14 +7,14 @@ data {
 parameters {
   real beta0;
   real beta1;
-  real<lower=0> sigma;
+  real sigma;
 
 }
 
 model {
-  beta0 ~ normal(100, 20);   
+  beta0 ~ normal(100, 40);   
   beta1 ~ normal(0.5, 1); 
-  sigma ~ student_t(1,0,10);
+  sigma ~ student_t(4,0,10);
   for (i in 1:N) {
     kid_score[i] ~ normal(beta0 + beta1 * mom_iq[i], sigma);  
   }
