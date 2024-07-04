@@ -10,25 +10,25 @@ using namespace stan::math;
 stan::math::profile_map profiles__;
 static constexpr std::array<const char*, 20> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/DA/project/kidiq/model1.stan', line 8, column 2 to column 13)",
- " (in '/home/DA/project/kidiq/model1.stan', line 9, column 2 to column 13)",
- " (in '/home/DA/project/kidiq/model1.stan', line 10, column 2 to column 13)",
- " (in '/home/DA/project/kidiq/model1.stan', line 24, column 4 to column 33)",
- " (in '/home/DA/project/kidiq/model1.stan', line 26, column 8 to column 73)",
- " (in '/home/DA/project/kidiq/model1.stan', line 25, column 19 to line 27, column 5)",
- " (in '/home/DA/project/kidiq/model1.stan', line 25, column 4 to line 27, column 5)",
- " (in '/home/DA/project/kidiq/model1.stan', line 15, column 2 to column 27)",
- " (in '/home/DA/project/kidiq/model1.stan', line 16, column 2 to column 25)",
- " (in '/home/DA/project/kidiq/model1.stan', line 17, column 2 to column 28)",
- " (in '/home/DA/project/kidiq/model1.stan', line 19, column 4 to column 60)",
- " (in '/home/DA/project/kidiq/model1.stan', line 18, column 17 to line 20, column 3)",
- " (in '/home/DA/project/kidiq/model1.stan', line 18, column 2 to line 20, column 3)",
- " (in '/home/DA/project/kidiq/model1.stan', line 2, column 2 to column 17)",
- " (in '/home/DA/project/kidiq/model1.stan', line 3, column 8 to column 9)",
- " (in '/home/DA/project/kidiq/model1.stan', line 3, column 2 to column 23)",
- " (in '/home/DA/project/kidiq/model1.stan', line 4, column 8 to column 9)",
- " (in '/home/DA/project/kidiq/model1.stan', line 4, column 2 to column 26)",
- " (in '/home/DA/project/kidiq/model1.stan', line 24, column 10 to column 11)"};
+ " (in '/home/kidiq/model1.stan', line 8, column 2 to column 13)",
+ " (in '/home/kidiq/model1.stan', line 9, column 2 to column 13)",
+ " (in '/home/kidiq/model1.stan', line 10, column 2 to column 13)",
+ " (in '/home/kidiq/model1.stan', line 24, column 4 to column 33)",
+ " (in '/home/kidiq/model1.stan', line 26, column 8 to column 73)",
+ " (in '/home/kidiq/model1.stan', line 25, column 19 to line 27, column 5)",
+ " (in '/home/kidiq/model1.stan', line 25, column 4 to line 27, column 5)",
+ " (in '/home/kidiq/model1.stan', line 15, column 2 to column 26)",
+ " (in '/home/kidiq/model1.stan', line 16, column 2 to column 25)",
+ " (in '/home/kidiq/model1.stan', line 17, column 2 to column 28)",
+ " (in '/home/kidiq/model1.stan', line 19, column 4 to column 60)",
+ " (in '/home/kidiq/model1.stan', line 18, column 17 to line 20, column 3)",
+ " (in '/home/kidiq/model1.stan', line 18, column 2 to line 20, column 3)",
+ " (in '/home/kidiq/model1.stan', line 2, column 2 to column 17)",
+ " (in '/home/kidiq/model1.stan', line 3, column 8 to column 9)",
+ " (in '/home/kidiq/model1.stan', line 3, column 2 to column 23)",
+ " (in '/home/kidiq/model1.stan', line 4, column 8 to column 9)",
+ " (in '/home/kidiq/model1.stan', line 4, column 2 to column 26)",
+ " (in '/home/kidiq/model1.stan', line 24, column 10 to column 11)"};
 
 
 
@@ -136,7 +136,7 @@ class model1_model final : public model_base_crtp<model1_model> {
       sigma = in__.template read<local_scalar_t__>();
       {
         current_statement__ = 8;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 100, 200));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 100, 40));
         current_statement__ = 9;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0.5, 1));
         current_statement__ = 10;

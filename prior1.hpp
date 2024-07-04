@@ -10,17 +10,17 @@ using namespace stan::math;
 stan::math::profile_map profiles__;
 static constexpr std::array<const char*, 12> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 7, column 2 to column 35)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 8, column 2 to column 34)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 9, column 2 to column 37)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 11, column 2 to column 26)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 13, column 4 to column 64)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 12, column 17 to line 14, column 3)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 12, column 2 to line 14, column 3)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 2, column 2 to column 17)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 3, column 8 to column 9)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 3, column 2 to column 23)",
- " (in '/home/DA/project/kidiq/prior1.stan', line 11, column 8 to column 9)"};
+ " (in '/home/kidiq/prior1.stan', line 7, column 2 to column 35)",
+ " (in '/home/kidiq/prior1.stan', line 8, column 2 to column 34)",
+ " (in '/home/kidiq/prior1.stan', line 9, column 2 to column 37)",
+ " (in '/home/kidiq/prior1.stan', line 11, column 2 to column 26)",
+ " (in '/home/kidiq/prior1.stan', line 13, column 4 to column 64)",
+ " (in '/home/kidiq/prior1.stan', line 12, column 17 to line 14, column 3)",
+ " (in '/home/kidiq/prior1.stan', line 12, column 2 to line 14, column 3)",
+ " (in '/home/kidiq/prior1.stan', line 2, column 2 to column 17)",
+ " (in '/home/kidiq/prior1.stan', line 3, column 8 to column 9)",
+ " (in '/home/kidiq/prior1.stan', line 3, column 2 to column 23)",
+ " (in '/home/kidiq/prior1.stan', line 11, column 8 to column 9)"};
 
 
 

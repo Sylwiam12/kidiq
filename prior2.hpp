@@ -10,21 +10,21 @@ using namespace stan::math;
 stan::math::profile_map profiles__;
 static constexpr std::array<const char*, 16> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 9, column 2 to column 35)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 10, column 2 to column 34)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 11, column 2 to column 33)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 12, column 2 to column 32)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 13, column 2 to column 37)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 15, column 2 to column 26)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 17, column 4 to column 110)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 16, column 17 to line 18, column 3)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 16, column 2 to line 18, column 3)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 2, column 2 to column 17)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 3, column 8 to column 9)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 3, column 2 to column 23)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 4, column 8 to column 9)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 4, column 2 to column 23)",
- " (in '/home/DA/project/kidiq/prior2.stan', line 15, column 8 to column 9)"};
+ " (in '/home/kidiq/prior2.stan', line 9, column 2 to column 35)",
+ " (in '/home/kidiq/prior2.stan', line 10, column 2 to column 34)",
+ " (in '/home/kidiq/prior2.stan', line 11, column 2 to column 33)",
+ " (in '/home/kidiq/prior2.stan', line 12, column 2 to column 32)",
+ " (in '/home/kidiq/prior2.stan', line 13, column 2 to column 37)",
+ " (in '/home/kidiq/prior2.stan', line 15, column 2 to column 26)",
+ " (in '/home/kidiq/prior2.stan', line 17, column 4 to column 110)",
+ " (in '/home/kidiq/prior2.stan', line 16, column 17 to line 18, column 3)",
+ " (in '/home/kidiq/prior2.stan', line 16, column 2 to line 18, column 3)",
+ " (in '/home/kidiq/prior2.stan', line 2, column 2 to column 17)",
+ " (in '/home/kidiq/prior2.stan', line 3, column 8 to column 9)",
+ " (in '/home/kidiq/prior2.stan', line 3, column 2 to column 23)",
+ " (in '/home/kidiq/prior2.stan', line 4, column 8 to column 9)",
+ " (in '/home/kidiq/prior2.stan', line 4, column 2 to column 23)",
+ " (in '/home/kidiq/prior2.stan', line 15, column 8 to column 9)"};
 
 
 
