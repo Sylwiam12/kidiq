@@ -6,11 +6,11 @@ data {
 }
 
 generated quantities {
-  real beta0 = normal_rng(100, 40);   
-  real beta1 = normal_rng(0.5, 1); 
-  real beta2 = normal_rng(0, 10);  
-  real beta3 = normal_rng(0, 5);
-  real sigma = student_t_rng(4,0,10);
+  real beta0 = normal_rng(90, 15);   
+  real beta1 = normal_rng(0, 1);
+  real beta2 = normal_rng(0, 1);  
+  real beta3 = normal_rng(0, 0.5);
+  real sigma = student_t_rng(4, 0, 1);
 
   array[N] real kid_score; 
   for (i in 1:N) {

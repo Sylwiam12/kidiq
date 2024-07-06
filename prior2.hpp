@@ -10,21 +10,21 @@ using namespace stan::math;
 stan::math::profile_map profiles__;
 static constexpr std::array<const char*, 16> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/kidiq/prior2.stan', line 9, column 2 to column 35)",
- " (in '/home/kidiq/prior2.stan', line 10, column 2 to column 34)",
- " (in '/home/kidiq/prior2.stan', line 11, column 2 to column 33)",
- " (in '/home/kidiq/prior2.stan', line 12, column 2 to column 32)",
- " (in '/home/kidiq/prior2.stan', line 13, column 2 to column 37)",
- " (in '/home/kidiq/prior2.stan', line 15, column 2 to column 26)",
- " (in '/home/kidiq/prior2.stan', line 17, column 4 to column 110)",
- " (in '/home/kidiq/prior2.stan', line 16, column 17 to line 18, column 3)",
- " (in '/home/kidiq/prior2.stan', line 16, column 2 to line 18, column 3)",
- " (in '/home/kidiq/prior2.stan', line 2, column 2 to column 17)",
- " (in '/home/kidiq/prior2.stan', line 3, column 8 to column 9)",
- " (in '/home/kidiq/prior2.stan', line 3, column 2 to column 23)",
- " (in '/home/kidiq/prior2.stan', line 4, column 8 to column 9)",
- " (in '/home/kidiq/prior2.stan', line 4, column 2 to column 23)",
- " (in '/home/kidiq/prior2.stan', line 15, column 8 to column 9)"};
+ " (in '/home/DA/kidiq2/prior2.stan', line 9, column 2 to column 34)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 10, column 2 to column 32)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 11, column 2 to column 32)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 12, column 2 to column 34)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 13, column 2 to column 38)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 15, column 2 to column 26)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 17, column 4 to column 110)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 16, column 17 to line 18, column 3)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 16, column 2 to line 18, column 3)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 2, column 2 to column 17)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 3, column 8 to column 9)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 3, column 2 to column 23)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 4, column 8 to column 9)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 4, column 2 to column 23)",
+ " (in '/home/DA/kidiq2/prior2.stan', line 15, column 8 to column 9)"};
 
 
 
@@ -164,19 +164,19 @@ class prior2_model final : public model_base_crtp<prior2_model> {
       } 
       double beta0 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 1;
-      beta0 = stan::math::normal_rng(100, 40, base_rng__);
+      beta0 = stan::math::normal_rng(90, 15, base_rng__);
       double beta1 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 2;
-      beta1 = stan::math::normal_rng(0.5, 1, base_rng__);
+      beta1 = stan::math::normal_rng(0, 1, base_rng__);
       double beta2 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 3;
-      beta2 = stan::math::normal_rng(0, 10, base_rng__);
+      beta2 = stan::math::normal_rng(0, 1, base_rng__);
       double beta3 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 4;
-      beta3 = stan::math::normal_rng(0, 5, base_rng__);
+      beta3 = stan::math::normal_rng(0, 0.5, base_rng__);
       double sigma = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 5;
-      sigma = stan::math::student_t_rng(4, 0, 10, base_rng__);
+      sigma = stan::math::student_t_rng(4, 0, 1, base_rng__);
       std::vector<double> kid_score =
          std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       current_statement__ = 9;

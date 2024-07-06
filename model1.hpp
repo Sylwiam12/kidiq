@@ -10,25 +10,25 @@ using namespace stan::math;
 stan::math::profile_map profiles__;
 static constexpr std::array<const char*, 20> locations_array__ = 
 {" (found before start of program)",
- " (in '/home/kidiq/model1.stan', line 8, column 2 to column 13)",
- " (in '/home/kidiq/model1.stan', line 9, column 2 to column 13)",
- " (in '/home/kidiq/model1.stan', line 10, column 2 to column 13)",
- " (in '/home/kidiq/model1.stan', line 24, column 4 to column 33)",
- " (in '/home/kidiq/model1.stan', line 26, column 8 to column 73)",
- " (in '/home/kidiq/model1.stan', line 25, column 19 to line 27, column 5)",
- " (in '/home/kidiq/model1.stan', line 25, column 4 to line 27, column 5)",
- " (in '/home/kidiq/model1.stan', line 15, column 2 to column 26)",
- " (in '/home/kidiq/model1.stan', line 16, column 2 to column 25)",
- " (in '/home/kidiq/model1.stan', line 17, column 2 to column 28)",
- " (in '/home/kidiq/model1.stan', line 19, column 4 to column 60)",
- " (in '/home/kidiq/model1.stan', line 18, column 17 to line 20, column 3)",
- " (in '/home/kidiq/model1.stan', line 18, column 2 to line 20, column 3)",
- " (in '/home/kidiq/model1.stan', line 2, column 2 to column 17)",
- " (in '/home/kidiq/model1.stan', line 3, column 8 to column 9)",
- " (in '/home/kidiq/model1.stan', line 3, column 2 to column 23)",
- " (in '/home/kidiq/model1.stan', line 4, column 8 to column 9)",
- " (in '/home/kidiq/model1.stan', line 4, column 2 to column 26)",
- " (in '/home/kidiq/model1.stan', line 24, column 10 to column 11)"};
+ " (in '/home/DA/kidiq2/model1.stan', line 8, column 2 to column 22)",
+ " (in '/home/DA/kidiq2/model1.stan', line 9, column 2 to column 22)",
+ " (in '/home/DA/kidiq2/model1.stan', line 10, column 2 to column 22)",
+ " (in '/home/DA/kidiq2/model1.stan', line 24, column 4 to column 42)",
+ " (in '/home/DA/kidiq2/model1.stan', line 26, column 8 to column 78)",
+ " (in '/home/DA/kidiq2/model1.stan', line 25, column 19 to line 27, column 5)",
+ " (in '/home/DA/kidiq2/model1.stan', line 25, column 4 to line 27, column 5)",
+ " (in '/home/DA/kidiq2/model1.stan', line 15, column 2 to column 23)",
+ " (in '/home/DA/kidiq2/model1.stan', line 16, column 2 to column 23)",
+ " (in '/home/DA/kidiq2/model1.stan', line 17, column 2 to column 21)",
+ " (in '/home/DA/kidiq2/model1.stan', line 19, column 4 to column 60)",
+ " (in '/home/DA/kidiq2/model1.stan', line 18, column 17 to line 20, column 3)",
+ " (in '/home/DA/kidiq2/model1.stan', line 18, column 2 to line 20, column 3)",
+ " (in '/home/DA/kidiq2/model1.stan', line 2, column 2 to column 17)",
+ " (in '/home/DA/kidiq2/model1.stan', line 3, column 8 to column 9)",
+ " (in '/home/DA/kidiq2/model1.stan', line 3, column 2 to column 23)",
+ " (in '/home/DA/kidiq2/model1.stan', line 4, column 8 to column 9)",
+ " (in '/home/DA/kidiq2/model1.stan', line 4, column 2 to column 26)",
+ " (in '/home/DA/kidiq2/model1.stan', line 24, column 10 to column 11)"};
 
 
 
@@ -127,20 +127,23 @@ class model1_model final : public model_base_crtp<model1_model> {
     try {
       local_scalar_t__ beta0 = DUMMY_VAR__;
       current_statement__ = 1;
-      beta0 = in__.template read<local_scalar_t__>();
+      beta0 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       local_scalar_t__ beta1 = DUMMY_VAR__;
       current_statement__ = 2;
-      beta1 = in__.template read<local_scalar_t__>();
+      beta1 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       local_scalar_t__ sigma = DUMMY_VAR__;
       current_statement__ = 3;
-      sigma = in__.template read<local_scalar_t__>();
+      sigma = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       {
         current_statement__ = 8;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 100, 40));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta0, 0, 1));
         current_statement__ = 9;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0.5, 1));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(beta1, 0, 1));
         current_statement__ = 10;
-        lp_accum__.add(stan::math::student_t_lpdf<propto__>(sigma, 4, 0, 10));
+        lp_accum__.add(stan::math::gamma_lpdf<propto__>(sigma, 2, 2));
         current_statement__ = 13;
         for (int i = 1; i <= N; ++i) {
           current_statement__ = 11;
@@ -188,13 +191,16 @@ class model1_model final : public model_base_crtp<model1_model> {
     try {
       double beta0 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 1;
-      beta0 = in__.template read<local_scalar_t__>();
+      beta0 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       double beta1 = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 2;
-      beta1 = in__.template read<local_scalar_t__>();
+      beta1 = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       double sigma = std::numeric_limits<double>::quiet_NaN();
       current_statement__ = 3;
-      sigma = in__.template read<local_scalar_t__>();
+      sigma = in__.template read_constrain_lb<local_scalar_t__, jacobian__>(
+                0, lp__);
       out__.write(beta0);
       out__.write(beta1);
       out__.write(sigma);
@@ -212,13 +218,17 @@ class model1_model final : public model_base_crtp<model1_model> {
       for (int i = 1; i <= N; ++i) {
         current_statement__ = 5;
         stan::model::assign(kid_score_pred,
-          stan::math::normal_rng(
-            (beta0 +
-              (beta1 *
-                stan::model::rvalue(mom_iq, "mom_iq",
-                  stan::model::index_uni(i)))), sigma, base_rng__),
+          stan::math::abs(
+            stan::math::normal_rng(
+              (beta0 +
+                (beta1 *
+                  stan::model::rvalue(mom_iq, "mom_iq",
+                    stan::model::index_uni(i)))), sigma, base_rng__)),
           "assigning variable kid_score_pred", stan::model::index_uni(i));
       }
+      current_statement__ = 4;
+      stan::math::check_greater_or_equal(function__, "kid_score_pred",
+                                            kid_score_pred, 0);
       out__.write(kid_score_pred);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -242,13 +252,13 @@ class model1_model final : public model_base_crtp<model1_model> {
       pos__ = 1;
       local_scalar_t__ beta0 = DUMMY_VAR__;
       beta0 = in__.read<local_scalar_t__>();
-      out__.write(beta0);
+      out__.write_free_lb(0, beta0);
       local_scalar_t__ beta1 = DUMMY_VAR__;
       beta1 = in__.read<local_scalar_t__>();
-      out__.write(beta1);
+      out__.write_free_lb(0, beta1);
       local_scalar_t__ sigma = DUMMY_VAR__;
       sigma = in__.read<local_scalar_t__>();
-      out__.write(sigma);
+      out__.write_free_lb(0, sigma);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }

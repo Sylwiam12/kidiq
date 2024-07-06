@@ -5,24 +5,24 @@ data {
 }
 
 parameters {
-  real beta0;
-  real beta1;
-  real sigma;
+  real<lower=0> beta0;
+  real<lower=0> beta1;
+  real<lower=0> sigma;
 
 }
 
 model {
-  beta0 ~ normal(100, 40);   
-  beta1 ~ normal(0.5, 1); 
-  sigma ~ student_t(4,0,10);
+  beta0 ~ normal(0, 1);   
+  beta1 ~ normal(0, 1); 
+  sigma ~ gamma(2,2);
   for (i in 1:N) {
     kid_score[i] ~ normal(beta0 + beta1 * mom_iq[i], sigma);  
   }
 }
 generated quantities {
 
-    array[N] real kid_score_pred;    
+    array[N] real<lower=0> kid_score_pred;    
     for (i in 1:N) {
-        kid_score_pred[i] = normal_rng(beta0 + beta1 * mom_iq[i], sigma);  
+        kid_score_pred[i] = abs(normal_rng(beta0 + beta1 * mom_iq[i], sigma));  
     }
 }
